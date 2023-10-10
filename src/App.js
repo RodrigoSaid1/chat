@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import Post from "./components/Post";
+import back from "./components/back.jpg";
+import styles from './App.css';
 
 const TelaTotal = styled.div`
   display: flex;
@@ -10,7 +12,7 @@ const TelaTotal = styled.div`
   align-items: center;
   height: 100vh;
   overflow: auto;
-  background-color: #b4e0f9;
+  background: #b4e0f9;
   position: fixed;
   left: 16vw;
 `;
@@ -43,6 +45,7 @@ const TelaMensagens = styled.div`
 `;
 
 class App extends React.Component {
+  
   state = {
     mensagens: [{ usuarioNome: "Olá", usuarioMensagem: "Bem Vindo!" }],
     valorInputNome: "",
@@ -73,6 +76,8 @@ class App extends React.Component {
   render() {
     return (
       <TelaTotal>
+        <img src={back} alt="" width={300}/>
+        
         {this.state.mensagens.map((mensagem) => {
           return (
             <Post
